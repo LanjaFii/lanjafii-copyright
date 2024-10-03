@@ -1,0 +1,514 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    overflow-x: hidden; /* Évite le défilement horizontal */
+    
+}
+
+.container {
+    position: relative; /* Nécessaire pour positionner les éléments par-dessus l'image */
+    z-index: 2; /* S'assurer que le contenu est au-dessus de l'image */
+    max-width: 1200px; /* Largeur maximum */
+    margin: 0 auto; /* Centrer le contenu */
+    padding: 0 20px; /* Espacement horizontal */
+}
+
+.parcours {
+    background-color: rgba(0, 0, 0, 0.8); /* Fond sombre pour la section */
+    padding: 20px 20px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 0 20px rgba(0, 204, 255, 0.5); /* Ombre pour un effet lumineux */
+    margin: 20px auto; /* Marge autour de la section */
+    max-width: 800px; /* Largeur maximum de la section */
+    width: 90%; /* Largeur responsive */
+}
+
+.parcours .container {
+    text-align: center; /* Centre le texte à l'intérieur du conteneur */
+}
+
+.parcours h2 {
+    font-size: 2.5em; /* Taille de la police */
+    color: #00ccff; /* Couleur du texte */
+    margin-bottom: 20px; /* Espacement en dessous du titre */
+    position: relative; /* Nécessaire pour le pseudo-élément */
+}
+
+.parcours h2::after {
+    content: ""; /* Nécessaire pour le pseudo-élément */
+    display: block; /* Permet de définir la taille */
+    height: 5px; /* Épaisseur de la ligne */
+    width: 50%; /* Largeur de la ligne */
+    background: #00ccff; /* Couleur de la ligne */
+    margin: 10px auto; /* Centre la ligne */
+    border-radius: 5px; /* Arrondit les coins de la ligne */
+}
+
+.parcours ul {
+    list-style: none; /* Enlève les puces de la liste */
+    padding: 0; /* Supprime le padding */
+}
+
+.parcours li {
+    color: #fff; /* Couleur du texte */
+    font-size: 1em; /* Taille de la police */
+    margin: 10px 0; /* Espacement entre les éléments de la liste */
+    position: relative; /* Nécessaire pour les puces personnalisées */
+    padding-left: 30px; /* Espacement à gauche pour les icônes */
+}
+
+.parcours li i {
+    color: #ffffff; /* Couleur des icônes */
+    position: absolute; /* Positionne l'icône */
+    left: 0; /* Aligne l'icône à gauche */
+    font-size: 1.5em; /* Taille de l'icône */
+}
+
+
+header {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(34, 34, 34, 0.9), rgba(0, 204, 255, 0.7));
+    position: relative;
+    color: white;
+}
+
+.cover-photo {
+    width: 95%; /* Pour que l'image prenne toute la largeur de l'écran */
+    height: auto; /* Hauteur automatique pour garder le ratio */
+    max-height: 350px; /* Hauteur maximale pour contrôler la taille */
+    object-fit: cover; /* Remplit l'élément sans déformer l'image */
+    border: 2px solid #00ccff; /* Bordure bleu néon */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 0 20px rgba(0, 204, 255, 0.7); /* Ombre pour un effet lumineux */
+    padding: 0px; /* Espacement intérieur pour l'effet de bordure */
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    background-image: url('Izy.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin: -75px auto 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.profile-photo img {
+    width: 100%; /* Prend toute la largeur du conteneur */
+    height: auto; /* Ajuste la hauteur pour garder le ratio */
+    display: block; /* Évite les espaces en dessous de l'image */
+    border-radius: 50%; /* Assure que l'image est également circulaire */
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+}
+
+.cta {
+    display: inline-block; /* Permet de donner des dimensions au lien */
+    padding: 15px 30px; /* Espace intérieur du bouton */
+    background-color: #00ccff; /* Couleur de fond bleu néon */
+    color: white; /* Couleur du texte */
+    font-weight: bold; /* Gras pour le texte */
+    text-decoration: none; /* Enlève le soulignement */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s, transform 0.3s; /* Transitions pour les effets */
+}
+
+.cta:hover {
+    background-color: #0099cc; /* Couleur de fond au survol */
+    transform: translateY(-2px); /* Légère élévation au survol */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de profondeur */
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.8); /* Fond sombre */
+    padding: 10px 0; /* Espacement vertical */
+    position: sticky; /* Reste en haut lors du défilement */
+    top: 0; /* Fixe la position en haut */
+    z-index: 1000; /* Assure que la nav est au-dessus du contenu */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav a{
+    color: #00ccff; /* Couleur du texte */
+    text-decoration: none; /* Enlève le soulignement */
+    font-weight: bold; /* Gras pour le texte */
+    position: relative; /* Nécessaire pour le pseudo-élément */
+    transition: color 0.3s; /* Transition pour le changement de couleur */
+}
+
+nav a::after {
+    content: ""; /* Nécessaire pour créer un pseudo-élément */
+    display: block;
+    height: 2px; /* Épaisseur de la ligne */
+    width: 0; /* Largeur initiale */
+    background: #00ccff; /* Couleur de la ligne */
+    transition: width 0.3s; /* Transition pour l'animation de largeur */
+    position: absolute; /* Positionnement absolu */
+    left: 50%; /* Centrer le pseudo-élément */
+    bottom: -5px; /* Positionner en dessous du texte */
+}
+
+nav a:hover {
+    color: #0099cc; /* Couleur du texte au survol */
+}
+
+nav a:hover::after {
+    width: 100%; /* La ligne s'étend sur toute la largeur du texte */
+    left: 0; /* Recentrer la ligne */
+}
+
+section {
+    padding: 20px 0;
+}
+
+h2 {
+    font-size: 1.2em; /* Taille de la police */
+    color: #0099cc; /* Couleur du texte */
+    text-align: center; /* Centre le texte */
+    margin: 20px 0; /* Espacement autour du titre */
+    position: relative; /* Nécessaire pour le pseudo-élément */
+    transition: transform 0.3s, color 0.3s; /* Transition douce pour l'effet */
+}
+
+h2::after {
+    content: ""; /* Nécessaire pour le pseudo-élément */
+    display: block; /* Permet de définir la taille */
+    height: 5px; /* Épaisseur de la ligne */
+    width: 50%; /* Largeur de la ligne */
+    background: #0099cc; /* Couleur de la ligne */
+    margin: 10px auto; /* Centre la ligne */
+    border-radius: 5px; /* Arrondit les coins de la ligne */
+    transition: width 0.3s; /* Transition douce pour l'animation */
+}
+
+h2:hover {
+    color: #006c91; /* Couleur au survol */
+    transform: scale(1.05); /* Effet de zoom au survol */
+}
+
+h2:hover::after {
+    width: 100%; /* La ligne s'étend sur toute la largeur au survol */
+    background: black;
+}
+
+
+
+
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    position: relative; /* Nécessaire pour positionner le pseudo-élément */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden; /* Cache les débordements du flou */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project h3, .project p{
+    color: white;
+    border-radius: 5px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(34, 34, 34, 0.9), rgba(0, 204, 255, 0.7));
+    font-weight: bold; /* Rend le texte plus gras au survol */
+}
+
+.project::before {
+    content: ''; /* Nécessaire pour afficher le pseudo-élément */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit; /* Utilise la même image de fond */
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px); /* Applique le flou par défaut */
+    z-index: 1; /* Met le pseudo-élément en dessous du texte */
+    transition: opacity 0.3s, filter 0.3s; /* Transitions pour flou et opacité */
+}
+
+.project:hover::before {
+    filter: blur(0); /* Enlève le flou au survol */
+}
+
+.project h3, .project p {
+    position: relative; /* Assure que le texte est au-dessus du flou */
+    z-index: 2; /* Met le texte au-dessus du pseudo-élément */
+    transition: font-weight 0.3s; /* Transition pour le changement de poids de police */
+}
+
+.project:hover h3, .project:hover p {
+    font-weight: bold; /* Rend le texte plus gras au survol */
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Image de fond pour chaque projet */
+.project-1 {
+    background-image: url('img/bool.PNG'); /* Remplace par le chemin de ton image */
+}
+.project-2 {
+    background-image: url('img/blog.PNG');
+}
+.project-3 {
+    background-image: url('img/blocnote.jpg');
+}
+.project-4 {
+    background-image: url('img/emp.png');
+}
+.project-5 {
+    background-image: url('img/robot.jpg');
+}
+.project-6 {
+    background-image: url('img/fidy.png');
+}
+.project-7 {
+    background-image: url('img/matrice.jpg');
+}
+
+
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input, textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+section {
+    padding: 20px 0;
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+@media (max-width: 768px) {
+    .profile-photo {
+        width: 120px; /* Réduit la taille de la photo de profil sur mobile */
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 24px; /* Ajuste la taille du texte sur mobile */
+    }
+
+    h2 {
+        font-size: 20px; /* Ajuste la taille du texte sur mobile */
+    }
+
+    button {
+        padding: 8px 16px; /* Ajuste le padding pour les petits écrans */
+    }
+
+    input, textarea {
+        max-width: 90%; /* Réduit la largeur max pour les petits écrans */
+    }
+}
+
+
+
+
+
+/* Compétences */
+.skills {
+    margin-top: 20px;
+    text-align: center; /* Centre le texte */
+}
+
+.skill {
+    display: flex;
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+    margin: 10px 0; /* Espacement entre les compétences */
+}
+
+.skill i {
+    font-size: 24px; /* Taille des icônes */
+    margin-right: 10px; /* Espacement entre l'icône et le nom */
+    color: #000000; /* Couleur par défaut pour les icônes */
+}
+
+.skill span {
+    font-weight: bold; /* Gras pour le nom */
+    color: #333; /* Couleur du nom de la compétence */
+    width: 150px; /* Largeur fixe pour aligner les noms */
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+.skill-bar {
+    background: #ddd; /* Fond de la barre de compétence */
+    border-radius: 5px; /* Coins arrondis */
+    width: 70%; /* Largeur de la barre */
+    margin-left: 10px; /* Espacement entre le nom et la barre */
+    display: flex; /* Utiliser flexbox pour centrer le texte */
+    justify-content: flex-start; /* Aligne à gauche */
+}
+
+.skill-level {
+    height: 10px; /* Hauteur de la barre */
+    border-radius: 5px; /* Coins arrondis pour la barre de niveau */
+    transition: width 0.3s; /* Animation lors de l'affichage de la barre */
+    display: flex; /* Flexbox pour centrer le texte */
+    align-items: center; /* Centre verticalement */
+    color: white; /* Couleur du texte de niveau */
+    font-size: 15px; /* Taille du texte de niveau */
+    text-shadow: -2px -2px 5px rgba(0, 0, 0, 0.7); /* Ombre noire pour le texte */
+}
+
+/* Exemple de niveaux de compétence */
+.js {
+    width: 80%; /* Pour JavaScript */
+    background: #f39c12; /* Couleur de la barre */
+}
+
+.python {
+    width: 70%; /* Pour Python */
+    background: #3498db; /* Couleur de la barre */
+}
+
+.cpp {
+    width: 60%; /* Pour C++ */
+    background: #e74c3c; /* Couleur de la barre */
+}
+
+.java {
+    width: 65%; /* Pour Java */
+    background: #9b59b6; /* Couleur de la barre */
+}
+
+.php {
+    width: 55%; /* Pour PHP */
+    background: #2ecc71; /* Couleur de la barre */
+}
+
+/* Styles pour les sections sans barre de compétence */
+.skills h3 {
+    color: #009688; /* Couleur pour les titres des sous-sections */
+    margin-top: 20px; /* Espacement au-dessus */
+    margin-bottom: 10px; /* Espacement en dessous */
+    font-family: 'Roboto', sans-serif; /* Police stylée */
+}
+
+
+
+/* Langues et loisirs */
+#langues, #loisirs {
+    padding: 20px 0; /* Espacement vertical */
+    text-align: center; /* Centre le texte */
+}
+
+#langues ul, #loisirs ul {
+    list-style-type: none; /* Supprime les puces */
+    padding: 0;
+    margin: 0;
+}
+
+#langues li, #loisirs li {
+    font-size: 18px; /* Taille de police */
+    margin: 15px 0; /* Espace entre les éléments */
+    display: flex; /* Flexbox pour aligner l'icône et le texte */
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+    color: rgb(219, 77, 77); /* Couleur du texte */
+}
+
+#langues li i, #loisirs li i {
+    margin-right: 10px; /* Espace entre l'icône et le texte */
+    color: #5370e3; /* Couleur de l'icône */
+    transition: transform 0.3s; /* Animation pour l'effet de survol */
+}
+
+#langues li:hover i, #loisirs li:hover i {
+    transform: scale(1.2); /* Agrandissement au survol */
+}
+
+
+
