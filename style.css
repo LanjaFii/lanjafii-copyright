@@ -445,27 +445,27 @@ footer {
 
 /* Exemple de niveaux de compétence */
 .js {
-    width: 80%; /* Pour JavaScript */
+    width: 70%; /* Pour JavaScript */
     background: #f39c12; /* Couleur de la barre */
 }
 
 .python {
-    width: 70%; /* Pour Python */
+    width: 40%; /* Pour Python */
     background: #3498db; /* Couleur de la barre */
 }
 
 .cpp {
-    width: 60%; /* Pour C++ */
+    width: 40%; /* Pour C++ */
     background: #e74c3c; /* Couleur de la barre */
 }
 
 .java {
-    width: 65%; /* Pour Java */
+    width: 60%; /* Pour Java */
     background: #9b59b6; /* Couleur de la barre */
 }
 
 .php {
-    width: 55%; /* Pour PHP */
+    width: 80%; /* Pour PHP */
     background: #2ecc71; /* Couleur de la barre */
 }
 
